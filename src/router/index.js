@@ -4,9 +4,10 @@
  * @Autor: PONY ZHANG
  * @Date: 2020-12-29 22:52:52
  * @LastEditors: PONY ZHANG
- * @LastEditTime: 2020-12-29 23:28:18
+ * @LastEditTime: 2020-12-30 23:50:57
  */
 import { createWebHistory, createRouter } from 'vue-router'
+import { constantRouterMap } from '/@/config/router.config'
 
 const routes = [ 
     {
@@ -26,5 +27,5 @@ const routes = [
 
 export default createRouter({
     history: createWebHistory('/ponyAdmin/'),
-    routes,
+    routes: routes,
 });
