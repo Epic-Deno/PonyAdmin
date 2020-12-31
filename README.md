@@ -1,2 +1,4 @@
+
 # vueAdmin
- vite+vue-router4.0+vuex4.0+ant-design4.0
+    管理主要采用vite搭建的架子，配合 vue3 加上vue-router4加上vuex40
+###
