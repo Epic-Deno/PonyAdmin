@@ -4,7 +4,7 @@
  * @Autor: PONY ZHANG
  * @Date: 2020-12-30 23:23:17
  * @LastEditors: PONY ZHANG
- * @LastEditTime: 2020-12-30 23:49:05
+ * @LastEditTime: 2021-01-04 23:51:26
  */
 import { UserLayout, TabLayout, RouteView,  } from '/@/components/layouts'
 
@@ -19,18 +19,19 @@ export const constantRouterMap = [
     {
         path: '/user',
         component: UserLayout,
+        name: 'user',
         redirect: '/user/login',
         hidden: true,
         children: [
             { 
                 path: 'login',
                 name: 'login',
-                component: () => import('/@/views/user/Login'),
+                component: () => import('/@/views/user/Login.vue'),
             },
         ]
     },
     {
         path: '/404',
-        component: () => import('/@/views/exception/404')
+        component: () => import('/@/views/exception/404.vue')
     }
 ];

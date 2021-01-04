@@ -4,10 +4,12 @@
  * @Autor: PONY ZHANG
  * @Date: 2020-12-30 23:32:34
  * @LastEditors: PONY ZHANG
- * @LastEditTime: 2020-12-30 23:33:39
+ * @LastEditTime: 2021-01-04 23:33:04
 -->
 <template>
-  
+  <div class="main">
+      <router-view />
+  </div>
 </template>
 
 <script>

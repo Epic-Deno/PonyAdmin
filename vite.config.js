@@ -4,7 +4,7 @@
  * @Autor: PONY ZHANG
  * @Date: 2020-12-29 23:15:39
  * @LastEditors: PONY ZHANG
- * @LastEditTime: 2020-12-29 23:27:42
+ * @LastEditTime: 2021-01-04 22:50:35
  */
 import { resolve } from 'path'
 const pathResolve = (dir) => {
@@ -15,7 +15,7 @@ module.exports = {
         "/@/": pathResolve("src"),
     },
     optimizeDeps: {
-        include: ["@ant-design/icons-vue"],
+        include: ["@ant-design/icons-vue","ant-design-vue/es/locale/en_US"],
     },
     // otherwise, may assets 404 or visit with index.html
     base: "/ponyAdmin/",
