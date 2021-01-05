@@ -4,7 +4,7 @@
  * @Autor: PONY ZHANG
  * @Date: 2020-12-30 23:23:17
  * @LastEditors: PONY ZHANG
- * @LastEditTime: 2021-01-04 23:51:26
+ * @LastEditTime: 2021-01-06 00:19:26
  */
 import { UserLayout, TabLayout, RouteView,  } from '/@/components/layouts'
 
@@ -32,6 +32,7 @@ export const constantRouterMap = [
     },
     {
         path: '/404',
+        name: '404',
         component: () => import('/@/views/exception/404.vue')
-    }
+    },
 ];
