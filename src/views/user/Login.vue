@@ -4,7 +4,7 @@
  * @Autor: PONY ZHANG
  * @Date: 2020-12-30 23:25:25
  * @LastEditors: PONY ZHANG
- * @LastEditTime: 2021-01-05 23:29:52
+ * @LastEditTime: 2021-01-07 00:02:50
 -->
 <template>
       <a-form
@@ -59,13 +59,15 @@
 </template>
 
 <script>
-import { ref, reactive } from "vue";
+import { ref, reactive, toRefs, toRaw } from "vue";
+import { useStore } from 'vuex'
 export default {
   name: "login",
   setup() {
     const autoLoginRef = ref(false);
     const autoLogin = ref(false);
 
+    const store = useStore();
     const formData = reactive({
       account: "vben",
       password: "123456",
@@ -74,6 +76,7 @@ export default {
     const wrapperCol = reactive({
       span: 24
     })
+    console.log(wrapperCol, toRaw(store.state.app))
 
     const formState = reactive({
       loading: false,

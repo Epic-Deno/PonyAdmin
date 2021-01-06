@@ -4,28 +4,44 @@
  * @Autor: PONY ZHANG
  * @Date: 2021-01-04 22:57:44
  * @LastEditors: PONY ZHANG
- * @LastEditTime: 2021-01-06 00:19:17
+ * @LastEditTime: 2021-01-07 00:26:02
  * @motto: 「あなたに逢えなくなって、錆びた時計と泣いたけど…」
  * @topic: # Carry Your World #
  */
 import router from '/@/router'
-const whiteList = ["/user/login", ];
+const whiteList = ["/user/login",];
+//todo 版本1 -- 未采用接口， 采取现在本地找Token字段
+let Token = localStorage.getItem('Token');
 
 const guards = (to, from, next) => {
     //todo  user login
-    console.log(to)
-    if(whiteList.indexOf(to.path) != -1) {
-        
-        //在白名单里面
-       next();
+    if (Token) {
+       if(to.path === '/user/login') {
+           next({ path: '/dashboard/analysis' })
+       } else {
+
+            //todo 先检查vuex是否存在，接口获取动态的路由 登录的时候会把参数注入一次
+           if(true) {
+
+           } else {
+               next();
+           }
+       }
     } else {
-        next({ path: '/user/login', query: { redirect: to.fullPath } });
+        if (whiteList.indexOf(to.path) != -1) {
+
+            //在白名单里面
+            next();
+        } else {
+            next({ path: '/user/login', query: { redirect: to.fullPath } });
+        }
     }
+
 }
 router.beforeEach((to, from, next) => {
-    if(false) {
+    if (false) {
 
-    } else { 
+    } else {
         guards(to, from, next);
-     }
+    }
 })
