@@ -5,7 +5,7 @@
  * @Author: PONY ZHANG
  * @Date: 2020-12-30 23:31:54
  * @LastEditors: PONY ZHANG
- * @LastEditTime: 2021-01-06 00:17:41
+ * @LastEditTime: 2021-01-07 22:53:22
  * @motto: 「あなたに逢えなくなって、錆びた時計と泣いたけど…」
  * @topic: # Carry Your World #
 -->
@@ -53,7 +53,7 @@
               type="primary"
               shape="circle"
               size="large"
-              @click="this.$router.push('/')"
+              @click="this.$router.push('/home/homeView')"
             >
               <template #icon><HomeFilled /></template>
             </a-button>
@@ -63,7 +63,7 @@
               type="primary"
               shape="circle"
               size="large"
-              @click="this.$router.push('/Test')"
+              @click="this.$router.push('/home/test')"
             >
               <template #icon><SettingFilled /></template>
             </a-button>

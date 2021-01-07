@@ -1,16 +1,69 @@
 /*
  * @Description: Powered By Fantastic Artwork Vue.js @ Evan You.
- * @Purpose: 动态路由拼接函数
+ * @Purpose: Purpose
  * @Version: 2.6.1
  * @Author: PONY ZHANG
- * @Date: 2021-01-05 23:38:07
+ * @Date: 2021-01-07 23:12:20
  * @LastEditors: PONY ZHANG
- * @LastEditTime: 2021-01-07 23:45:07
+ * @LastEditTime: 2021-01-07 23:31:27
  * @motto: 「あなたに逢えなくなって、錆びた時計と泣いたけど…」
  * @topic: # Carry Your World #
  */
+const routerData = [
+    {
+        "redirect": null,
+        "path": "/dashboard/analysis",
+        "component": "dashboard/Analysis",
+        "route": "1",
+        "meta": {
+            "keepAlive": true,
+            "internalOrExternal": false,
+            "icon": "home",
+            "title": "首页",
+            "url": null,
+        },
+        "name": "dashboard-analysis",
+        "id": "9502685863ab87f0ad1134142788a385",
+        // "children": [],
+    },
+    {
+        "redirect": null,
+        "path": "/home",
+        "component": "layouts/RouteView",
+        "name": "myhome",
+        "route": "1",
+        "children": [
+            {
+                "path": "/home/homeView",
+                "component": "HomeView/Home",
+                "route": "1",
+                "meta": {
+                    "keepAlive": false,
+                    "internalOrExternal": false,
+                    "title": "首页",
+                    "url": null,
+                },
+                "name": "home",
+                "id": "12333211"
+            },
+            {
+                "path": "/home/test",
+                "component": "HomeView/test",
+                "route": "1",
+                "meta": {
+                    "keepAlive": false,
+                    "internalOrExternal": false,
+                    "title": "测试页面",
+                    "url": null,
 
-export const generateIndexRouter = (data) => {
+                },
+                "name": "test",
+                "id": "14554433",
+            }
+        ]
+    }
+];
+const generateIndexRouter = (data) => {
     let indexRouter = [{
         path: '/',
         name: 'dashborad',
@@ -54,6 +107,7 @@ const generateChildRouters = (data) => {
         // if (isURL(URL)) {
         //     item.meta.url = URL;
         // }
+        // console.log(item)
         //路由参数
         let menu = {
             path: item.path,
@@ -90,3 +144,4 @@ const generateChildRouters = (data) => {
     return routers
 }
 
+generateIndexRouter(routerData);

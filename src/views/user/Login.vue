@@ -4,7 +4,7 @@
  * @Autor: PONY ZHANG
  * @Date: 2020-12-30 23:25:25
  * @LastEditors: PONY ZHANG
- * @LastEditTime: 2021-01-07 00:02:50
+ * @LastEditTime: 2021-01-07 22:52:04
 -->
 <template>
       <a-form
@@ -52,6 +52,7 @@
             class="rounded-sm"
             :block="true"
             :loading="formState.loading"
+            @click="login"
             >登录</a-button
           >
         </a-form-item>
@@ -87,6 +88,10 @@ export default {
       password: [{ required: true, message: "请输入密码", trigger: "blur" }],
     });
 
+    const login = () => {
+      localStorage.setItem('Token',"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MDc2ODIyNzksInVzZXJuYW1lIjoiYWRtaW4tY2gifQ.Ep_D_XTgc6JS7wFDiCuTO-hwlGB5QasaFqD5c7pEUS0");
+    }
+
     return {
       autoLoginRef,
       autoLogin,
@@ -94,6 +99,7 @@ export default {
       formData,
       formRules,
       wrapperCol,
+      login,
     };
   },
 };
