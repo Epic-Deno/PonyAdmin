@@ -5,11 +5,11 @@
  * @Author: PONY ZHANG
  * @Date: 2021-01-05 23:38:07
  * @LastEditors: PONY ZHANG
- * @LastEditTime: 2021-01-07 23:45:07
+ * @LastEditTime: 2021-01-08 00:19:51
  * @motto: 「あなたに逢えなくなって、錆びた時計と泣いたけど…」
  * @topic: # Carry Your World #
  */
-
+import { defineAsyncComponent } from "vue"
 export const generateIndexRouter = (data) => {
     let indexRouter = [{
         path: '/',
@@ -59,7 +59,7 @@ const generateChildRouters = (data) => {
             path: item.path,
             name: item.name,
             redirect: item.redirect,
-            component: resolve => require(['/@/' + component + '.vue'], resolve),
+            component: defineAsyncComponent(() => import(`/@/${component}.vue`)),
             hidden: item.hidden,
             // resolve => require(['/@/' + component + '.vue'], resolve)
             meta: {
